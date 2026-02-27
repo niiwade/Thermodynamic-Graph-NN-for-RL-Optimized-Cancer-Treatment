@@ -1,0 +1,58 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cell Visualization Engine</title>
+    <link rel="stylesheet" href="./src/style.css" />
+  </head>
+  <body>
+    <div id="hud">
+      <h1>Thermodynamic Cell Visualizer</h1>
+      <p id="step">Step: 0</p>
+      <p id="action">Action: -</p>
+      <p id="avgEnergy">Avg Energy: 0.000</p>
+      <p id="stage">Stage: 0 (In situ mucosa)</p>
+      <p id="mode">Mode: loading...</p>
+      <div id="riskPanel">
+        <p id="riskTitle">Spread Probability</p>
+        <div id="riskLegend">
+          <span class="riskLow">Low</span>
+          <span class="riskMid">Medium</span>
+          <span class="riskHigh">High</span>
+        </div>
+        <label for="riskThreshold">Threshold: <span id="riskThresholdValue">0.45</span></label>
+        <input id="riskThreshold" type="range" min="0" max="1" step="0.01" value="0.45" />
+      </div>
+      <button id="helpBtn" type="button">Help</button>
+      <p class="hint">Space pause | R reset | 1/2/3 camera | Lumen: W/S or Up/Down move, A/D look around | PgUp/PgDn vertical | P frame | V rec | B cycle video</p>
+    </div>
+    <div id="helpModal" class="modal hidden" aria-hidden="true">
+      <div id="helpCard" class="modalCard" role="dialog" aria-modal="true" aria-labelledby="helpTitle">
+        <div class="modalHeader">
+          <h2 id="helpTitle">Keyboard Controls</h2>
+          <button id="closeHelpBtn" type="button" aria-label="Close help">×</button>
+        </div>
+        <ul class="helpList">
+          <li><kbd>Space</kbd> Pause or resume simulation</li>
+          <li><kbd>R</kbd> Reset simulation</li>
+          <li><kbd>1</kbd> Overview camera</li>
+          <li><kbd>2</kbd> Lumen camera (inside view)</li>
+          <li><kbd>3</kbd> Rectum closeup camera</li>
+          <li><kbd>W/S</kbd> or <kbd>Up/Down</kbd> Move through lumen (camera 2)</li>
+          <li><kbd>A/D</kbd> or <kbd>Left/Right</kbd> Rotate view around lumen wall (camera 2)</li>
+          <li><kbd>PageUp/PageDown</kbd> Move camera up/down</li>
+          <li><kbd>P</kbd> Export current frame as PNG</li>
+          <li><kbd>V</kbd> Start/stop WebM recording</li>
+          <li><kbd>B</kbd> Record one full treatment cycle</li>
+          <li><kbd>Esc</kbd> Exit lumen mode to overview, or close this help modal</li>
+        </ul>
+      </div>
+    </div>
+    <canvas id="app"></canvas>
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
+
+
+

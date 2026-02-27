@@ -1,0 +1,173 @@
+﻿:root {
+  --bg0: #2a0f16;
+  --bg1: #4a1f2b;
+  --panel: rgba(53, 21, 30, 0.72);
+  --text: #ffe6ec;
+  --accent: #ffb7c8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  color: var(--text);
+  font-family: "Segoe UI", "Trebuchet MS", sans-serif;
+  background: radial-gradient(circle at 24% 20%, #6e3041 0%, var(--bg1) 35%, var(--bg0) 100%);
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+#hud {
+  position: fixed;
+  top: 14px;
+  left: 14px;
+  padding: 12px 14px;
+  background: var(--panel);
+  border: 1px solid rgba(255, 183, 200, 0.26);
+  border-radius: 10px;
+  backdrop-filter: blur(4px);
+  z-index: 10;
+  min-width: 230px;
+}
+
+#hud h1 {
+  margin: 0 0 8px;
+  font-size: 16px;
+  color: var(--accent);
+}
+
+#hud p {
+  margin: 4px 0;
+  font-size: 13px;
+}
+
+#riskPanel {
+  margin-top: 8px;
+  padding-top: 6px;
+  border-top: 1px solid rgba(255, 183, 200, 0.22);
+}
+
+#riskTitle {
+  margin: 0 0 4px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+#riskLegend {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  margin-bottom: 4px;
+}
+
+#riskLegend .riskLow {
+  color: #76b7ff;
+}
+
+#riskLegend .riskMid {
+  color: #ffd46c;
+}
+
+#riskLegend .riskHigh {
+  color: #ff5f76;
+}
+
+#riskThreshold {
+  width: 100%;
+  accent-color: #ff8ea6;
+}
+
+#helpBtn {
+  margin-top: 8px;
+  width: 100%;
+  border: 1px solid rgba(255, 183, 200, 0.32);
+  background: rgba(255, 183, 200, 0.1);
+  color: var(--text);
+  border-radius: 8px;
+  padding: 6px 8px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+#helpBtn:hover {
+  background: rgba(255, 183, 200, 0.2);
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(22, 6, 11, 0.66);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 30;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modalCard {
+  width: min(620px, 92vw);
+  max-height: 82vh;
+  overflow: auto;
+  background: rgba(61, 24, 35, 0.94);
+  border: 1px solid rgba(255, 183, 200, 0.28);
+  border-radius: 12px;
+  padding: 12px 14px;
+}
+
+.modalHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.modalHeader h2 {
+  margin: 0;
+  font-size: 18px;
+  color: var(--accent);
+}
+
+#closeHelpBtn {
+  border: none;
+  background: transparent;
+  color: var(--text);
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.helpList {
+  margin: 10px 0 0;
+  padding-left: 18px;
+  font-size: 13px;
+}
+
+.helpList li {
+  margin: 6px 0;
+}
+
+kbd {
+  padding: 1px 6px;
+  border-radius: 5px;
+  border: 1px solid rgba(255, 183, 200, 0.35);
+  background: rgba(255, 183, 200, 0.12);
+  font-size: 12px;
+}
+
+#hud .hint {
+  margin-top: 8px;
+  font-size: 11px;
+  opacity: 0.88;
+}
