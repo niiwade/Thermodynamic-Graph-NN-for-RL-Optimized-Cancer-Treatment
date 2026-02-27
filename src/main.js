@@ -1,5 +1,5 @@
-﻿import * as THREE from "https://unpkg.com/three@0.161.0/build/three.module.js?module";
-import { OrbitControls } from "https://unpkg.com/three@0.161.0/examples/jsm/controls/OrbitControls.js?module";
+﻿import * as THREE from "./lib/three.module.js";
+import { OrbitControls } from "./lib/OrbitControls.js";
 
 const canvas = document.getElementById("app");
 const stepEl = document.getElementById("step");
